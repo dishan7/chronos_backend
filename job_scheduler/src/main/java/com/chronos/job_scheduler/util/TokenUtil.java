@@ -4,7 +4,19 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.SignatureException;
 
+import java.util.Date;
+
 public class TokenUtil {
+
+    public static String generateToken(String subject, String role){
+        return Jwts.builder()
+                .subject(subject)
+                .setIssuedAt(new Date(System.currentTimeMillis()))
+                .setExpiration(new Date(System.currentTimeMillis() + 5 * 60 * 1000))
+                .claim("roles", "ROLE_" + role)
+                .signWith(io.jsonwebtoken.SignatureAlgorithm.HS256, "secretKeyPersonalTestingTokensecretKeyPersonalTestingTokensecretKeyPersonalTestingTokensecretKeyPersonalTestingToken")
+                .compact();
+    }
 
     public static Claims validateSignedToken(String authorizationHeader){
         try{

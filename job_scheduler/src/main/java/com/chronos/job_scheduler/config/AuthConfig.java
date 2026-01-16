@@ -20,7 +20,7 @@ public class AuthConfig {
         try{
             httpSecurity.csrf(csrf -> csrf.disable())
                     .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                            .requestMatchers("/job/createJob", "/job/fetchJobsInTimeFrame", "/job/updateJobDetails", "/job/executeNow", "/job/fetchJobsByUser", "/job/fetchJobById", "/job/cancelJob", "/job/rescheduleJob")
+                            .requestMatchers("/job/**")
                             .permitAll()
                             .anyRequest()
                             .authenticated())

@@ -40,9 +40,9 @@ public class AuthJwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    @Override
-    protected boolean shouldNotFilter(HttpServletRequest request){
-        String path = request.getServletPath();
-        return path.equals("/fetchJobsInTimeFrame") || path.equals("/fetchJobsInTimeFrame2") || path.equals("/executeNow");
-    }
+//    @Override
+//    protected boolean shouldNotFilter(HttpServletRequest request){
+//        String path = request.getServletPath();
+//        return path.equals("/executeNow");
+//    }
 }

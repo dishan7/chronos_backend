@@ -8,6 +8,7 @@ import com.chronos.job_scheduler.entity.Job;
 import com.chronos.job_scheduler.enums.JOB_STATUS;
 import com.chronos.job_scheduler.exception.JobNotFoundException;
 import com.chronos.job_scheduler.repository.JobRepository;
+import com.chronos.job_scheduler.util.TokenUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -58,11 +59,12 @@ public class JobService {
         job.setStatus(JOB_STATUS.RUNNING);
 
         Job savedJob = _jobRepository.save(job);
-
+        String authorizationToken = TokenUtil.generateToken("executeJob", "JOB_SCHEDULER");
         webClient.put()
                 .uri(uriBuilder -> uriBuilder
                         .path("/executeNow")
                         .build())
+                .header("Authorization", "Bearer " + authorizationToken)
                 .contentType(MediaType.APPLICATION_JSON)
                 .bodyValue(savedJob)
                 .retrieve()

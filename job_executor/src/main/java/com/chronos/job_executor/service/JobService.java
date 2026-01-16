@@ -126,54 +126,6 @@ public class JobService {
         );
     }
 
-//    @Retryable(
-//            retryFor = {
-//                    IOException.class,
-//                    InterruptedException.class,
-//                    RuntimeException.class
-//            },
-//            maxAttempts = 3,
-//            backoff = @Backoff(delay = 2000, multiplier = 2)
-//    )
-//    public CommandResultDto executeNow(JobDto job) throws IOException, InterruptedException {
-//        ProcessBuilder processBuilder;
-//        if(isWindows()){
-//            processBuilder = new ProcessBuilder("cmd.exe", "/c", job.getCommand());
-//        }
-//        else{
-//            processBuilder = new ProcessBuilder("bash", "-c", job.getCommand());
-//        }
-//        File dir = new File(job.getPath());
-//        if (!dir.exists()) {
-//            throw new IllegalArgumentException("Directory does not exist");
-//        }
-//        processBuilder.directory(dir);
-//        Process process = processBuilder.start();
-//        String output = new String(
-//                process.getInputStream().readAllBytes(),
-//                StandardCharsets.UTF_8
-//        );
-//        String error = new String(
-//                process.getErrorStream().readAllBytes(),
-//                StandardCharsets.UTF_8
-//        );
-//        boolean finished = process.waitFor(60, TimeUnit.SECONDS);
-//        if (!finished) {
-//            process.destroyForcibly();
-//            throw new RuntimeException("Command timed out");
-//        }
-//        int exitCode = process.exitValue();
-//        System.out.println(output);
-//        System.out.println(error);
-//        System.out.println(exitCode);
-//        String status = exitCode==0?"SUCCESSFUL":"FAILED";
-//        return new CommandResultDto(
-//                status,
-//                output,
-//                error
-//        );
-//    }
-
     public void updateJobDetails(JobDto job, CommandResultDto result){
         String authorizationToken = TokenUtil.generateToken("fetchJobs", "JOB_EXECUTOR");
         LocalDateTime nextRunAt;

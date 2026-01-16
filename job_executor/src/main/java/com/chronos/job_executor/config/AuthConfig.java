@@ -21,7 +21,7 @@ public class AuthConfig {
         try{
             httpSecurity.csrf(csrf -> csrf.disable())
                     .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                            .requestMatchers("/createJob", "/fetchJobsInTimeFrame", "/fetchJobsInTimeFrame2", "/executeNow")
+                            .requestMatchers( "/executeNow")
                             .permitAll()
                             .anyRequest()
                             .authenticated())
