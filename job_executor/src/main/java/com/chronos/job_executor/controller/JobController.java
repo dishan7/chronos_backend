@@ -3,6 +3,7 @@ package com.chronos.job_executor.controller;
 import com.chronos.job_executor.dto.JobDto;
 import com.chronos.job_executor.service.JobProducerService;
 import com.chronos.job_executor.service.JobService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,11 +30,8 @@ public class JobController {
     @PutMapping("/executeNow")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @PreAuthorize("hasRole('JOB_SCHEDULER')")
-    public Mono<Void> executeNow(@RequestBody JobDto job) throws Exception {
+    public Mono<Void> executeNow(@RequestBody @Valid JobDto job) throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        authentication.getAuthorities().forEach(authority -> {
-            System.out.println(authority.getAuthority());
-        });
         if(!authentication.getAuthorities().contains(new SimpleGrantedAuthority("ROLE_JOB_SCHEDULER"))){
             throw new Exception("Unauthorized request");
         }

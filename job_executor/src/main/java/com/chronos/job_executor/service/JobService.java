@@ -3,6 +3,7 @@ package com.chronos.job_executor.service;
 import com.chronos.job_executor.dto.CommandResultDto;
 import com.chronos.job_executor.dto.JobDto;
 import com.chronos.job_executor.util.TokenUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.retry.annotation.Backoff;
 import org.springframework.retry.annotation.Recover;
@@ -23,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 import static io.netty.util.internal.PlatformDependent.isWindows;
 
 @Service
+@Slf4j
 public class JobService {
 
     @Autowired
@@ -34,8 +36,10 @@ public class JobService {
     public List<JobDto> fetchJobsInTimeFrame(){
         String start = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES).toString();
         String end = LocalDateTime.now().truncatedTo(ChronoUnit.MINUTES).plusMinutes(1).toString();
-        System.out.println(start + " - " + end);
         System.out.println("fetching jobs for next 1 min");
+        log.info("fetching jobs for next 1 min");
+        System.out.println(start + " - " + end);
+        log.info("{} - {}", start, end);
         String authorizationToken = TokenUtil.generateToken("fetchJobs", "JOB_EXECUTOR");
         List<JobDto> jobs =  webClient.get()
                 .uri(uriBuilder -> uriBuilder
@@ -48,17 +52,18 @@ public class JobService {
                 .bodyToFlux(JobDto.class)
                 .collectList()
                 .block();
-        System.out.println(jobs);
         return jobs;
     }
 
     @Scheduled(cron = "0 */1 * * * *", zone = "Asia/Kolkata")
     public void produceJobsToKafka(){
         System.out.println("producing jobs for next 1 min");
+        log.info("producing jobs for next 1 min");
         List<JobDto> jobs = fetchJobsInTimeFrame();
 
         for(JobDto job: jobs){
             System.out.println("producer side: " + job.getId());
+            log.info("producer side: {}" , job.getId());
             _JobProducerService.produceJobs(job);
         }
     }
@@ -101,8 +106,11 @@ public class JobService {
         }
         int exitCode = process.exitValue();
         System.out.println(output);
+        log.info("output: {}", output);
         System.out.println(error);
+        log.info("error: {}", error);
         System.out.println(exitCode);
+        log.info("exitCode: {}", exitCode);
         String status = exitCode==0?"SUCCESSFUL":"FAILED";
         if(exitCode != 0){
             throw new RuntimeException("Command execution failed with exit code: " + exitCode);
@@ -136,7 +144,7 @@ public class JobService {
             nextRunAt = job.getRunAt();
         }
         System.out.println("nextRunningTime: " + nextRunAt);
-
+        log.info("nextRunningTime: {}" , nextRunAt);
         webClient.put()
                 .uri(uriBuilder -> uriBuilder
                         .path("/job/updateJobDetails")

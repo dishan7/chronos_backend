@@ -1,0 +1,1113 @@
+2026-01-17T03:48:03.865+05:30  INFO 54403 --- [job_executor] [main] c.c.job_executor.JobExecutorApplication  : Starting JobExecutorApplication using Java 17.0.15 with PID 54403 (/Users/dishanchutani/Documents/chronos/job_executor/build/classes/java/main started by dishanchutani in /Users/dishanchutani/Documents/chronos/job_executor)
+2026-01-17T03:48:03.866+05:30  INFO 54403 --- [job_executor] [main] c.c.job_executor.JobExecutorApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T03:48:04.421+05:30  INFO 54403 --- [job_executor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2026-01-17T03:48:04.427+05:30  INFO 54403 --- [job_executor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T03:48:04.427+05:30  INFO 54403 --- [job_executor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-01-17T03:48:04.454+05:30  INFO 54403 --- [job_executor] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T03:48:04.454+05:30  INFO 54403 --- [job_executor] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 563 ms
+2026-01-17T03:48:04.784+05:30  WARN 54403 --- [job_executor] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 510ca82c-6699-4b34-bfb0-ca7271e9fd81
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-17T03:48:04.787+05:30  INFO 54403 --- [job_executor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-17T03:48:05.088+05:30  INFO 54403 --- [job_executor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2026-01-17T03:48:05.108+05:30  INFO 54403 --- [job_executor] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-job-executor-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = job-executor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-01-17T03:48:05.139+05:30  INFO 54403 --- [job_executor] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-01-17T03:48:05.229+05:30  INFO 54403 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-01-17T03:48:05.230+05:30  INFO 54403 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-01-17T03:48:05.230+05:30  INFO 54403 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1768601885225
+2026-01-17T03:48:05.231+05:30  INFO 54403 --- [job_executor] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Subscribed to topic(s): scheduled-jobs-topic
+2026-01-17T03:48:05.235+05:30  INFO 54403 --- [job_executor] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-job-executor-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = job-executor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-01-17T03:48:05.235+05:30  INFO 54403 --- [job_executor] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-01-17T03:48:05.242+05:30  INFO 54403 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-01-17T03:48:05.242+05:30  INFO 54403 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-01-17T03:48:05.242+05:30  INFO 54403 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1768601885242
+2026-01-17T03:48:05.243+05:30  INFO 54403 --- [job_executor] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Subscribed to topic(s): scheduled-updated-jobs-topic
+2026-01-17T03:48:05.251+05:30  INFO 54403 --- [job_executor] [main] c.c.job_executor.JobExecutorApplication  : Started JobExecutorApplication in 1.593 seconds (process running for 1.749)
+2026-01-17T03:48:05.485+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Cluster ID: 3-NS_9qTSXShPmF7mFqOJA
+2026-01-17T03:48:05.485+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Cluster ID: 3-NS_9qTSXShPmF7mFqOJA
+2026-01-17T03:48:05.499+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-01-17T03:48:05.499+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-01-17T03:48:05.501+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] (Re-)joining group
+2026-01-17T03:48:05.501+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] (Re-)joining group
+2026-01-17T03:48:05.517+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Request joining group due to: need to re-join with the given member-id: consumer-job-executor-1-c65fdab4-88df-46f2-83d1-fbce7c261e3e
+2026-01-17T03:48:05.517+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Request joining group due to: need to re-join with the given member-id: consumer-job-executor-2-cf7b6369-c445-429c-ae83-bc8eb6334dbd
+2026-01-17T03:48:05.518+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] (Re-)joining group
+2026-01-17T03:48:05.518+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] (Re-)joining group
+2026-01-17T03:48:08.334+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Member consumer-job-executor-1-c65fdab4-88df-46f2-83d1-fbce7c261e3e sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-17T03:48:08.334+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Member consumer-job-executor-2-cf7b6369-c445-429c-ae83-bc8eb6334dbd sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-17T03:48:08.335+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-17T03:48:08.335+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-17T03:48:08.336+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Request joining group due to: consumer pro-actively leaving the group
+2026-01-17T03:48:08.336+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Unsubscribed all topics or patterns and assigned partitions
+2026-01-17T03:48:08.336+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Request joining group due to: consumer pro-actively leaving the group
+2026-01-17T03:48:08.336+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Unsubscribed all topics or patterns and assigned partitions
+2026-01-17T03:48:08.337+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-17T03:48:08.337+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-17T03:48:08.337+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Request joining group due to: consumer pro-actively leaving the group
+2026-01-17T03:48:08.338+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Request joining group due to: consumer pro-actively leaving the group
+2026-01-17T03:48:11.687+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-01-17T03:48:11.688+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-17T03:48:11.688+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-01-17T03:48:11.688+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-01-17T03:48:11.693+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-job-executor-2 unregistered
+2026-01-17T03:48:11.694+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-executor: Consumer stopped
+2026-01-17T03:48:11.695+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-01-17T03:48:11.695+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-17T03:48:11.696+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-01-17T03:48:11.696+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-01-17T03:48:11.698+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-job-executor-1 unregistered
+2026-01-17T03:48:11.699+05:30  INFO 54403 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-executor: Consumer stopped
+2026-01-17T03:48:11.700+05:30  INFO 54403 --- [job_executor] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-17T03:48:11.705+05:30  INFO 54403 --- [job_executor] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-01-17T03:48:46.200+05:30  INFO 54440 --- [job_executor] [main] c.c.job_executor.JobExecutorApplication  : Starting JobExecutorApplication using Java 17.0.15 with PID 54440 (/Users/dishanchutani/Documents/chronos/job_executor/build/classes/java/main started by dishanchutani in /Users/dishanchutani/Documents/chronos/job_executor)
+2026-01-17T03:48:46.204+05:30  INFO 54440 --- [job_executor] [main] c.c.job_executor.JobExecutorApplication  : No active profile set, falling back to 1 default profile: "default"
+2026-01-17T03:48:47.012+05:30  INFO 54440 --- [job_executor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8082 (http)
+2026-01-17T03:48:47.026+05:30  INFO 54440 --- [job_executor] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-17T03:48:47.026+05:30  INFO 54440 --- [job_executor] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.42]
+2026-01-17T03:48:47.071+05:30  INFO 54440 --- [job_executor] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-01-17T03:48:47.072+05:30  INFO 54440 --- [job_executor] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 817 ms
+2026-01-17T03:48:47.430+05:30  WARN 54440 --- [job_executor] [main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 3029e951-04d6-407e-a5cf-739fa1cb489f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-01-17T03:48:47.435+05:30  INFO 54440 --- [job_executor] [main] r$InitializeUserDetailsManagerConfigurer : Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-01-17T03:48:47.882+05:30  INFO 54440 --- [job_executor] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8082 (http) with context path '/'
+2026-01-17T03:48:47.900+05:30  INFO 54440 --- [job_executor] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-job-executor-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = job-executor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-01-17T03:48:47.922+05:30  INFO 54440 --- [job_executor] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-01-17T03:48:48.196+05:30  INFO 54440 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-01-17T03:48:48.197+05:30  INFO 54440 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-01-17T03:48:48.198+05:30  INFO 54440 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1768601928195
+2026-01-17T03:48:48.200+05:30  INFO 54440 --- [job_executor] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Subscribed to topic(s): scheduled-jobs-topic
+2026-01-17T03:48:48.204+05:30  INFO 54440 --- [job_executor] [main] o.a.k.clients.consumer.ConsumerConfig    : ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = earliest
+	bootstrap.servers = [localhost:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-job-executor-2
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = job-executor
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.springframework.kafka.support.serializer.JsonDeserializer
+
+2026-01-17T03:48:48.205+05:30  INFO 54440 --- [job_executor] [main] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-01-17T03:48:48.220+05:30  INFO 54440 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-01-17T03:48:48.220+05:30  INFO 54440 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-01-17T03:48:48.220+05:30  INFO 54440 --- [job_executor] [main] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1768601928220
+2026-01-17T03:48:48.221+05:30  INFO 54440 --- [job_executor] [main] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Subscribed to topic(s): scheduled-updated-jobs-topic
+2026-01-17T03:48:48.244+05:30  INFO 54440 --- [job_executor] [main] c.c.job_executor.JobExecutorApplication  : Started JobExecutorApplication in 2.64 seconds (process running for 3.007)
+2026-01-17T03:48:48.406+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Cluster ID: 3-NS_9qTSXShPmF7mFqOJA
+2026-01-17T03:48:48.406+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] org.apache.kafka.clients.Metadata        : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Cluster ID: 3-NS_9qTSXShPmF7mFqOJA
+2026-01-17T03:48:48.407+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-01-17T03:48:48.407+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Discovered group coordinator localhost:9092 (id: 2147483646 rack: null)
+2026-01-17T03:48:48.408+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] (Re-)joining group
+2026-01-17T03:48:48.408+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] (Re-)joining group
+2026-01-17T03:48:48.425+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Request joining group due to: need to re-join with the given member-id: consumer-job-executor-2-cc11dc76-067b-4e75-a056-d4d8104bad27
+2026-01-17T03:48:48.425+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Request joining group due to: need to re-join with the given member-id: consumer-job-executor-1-1f887160-3929-46f3-b2ea-6aacdd870525
+2026-01-17T03:48:48.426+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] (Re-)joining group
+2026-01-17T03:48:48.426+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] (Re-)joining group
+2026-01-17T03:48:54.619+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Successfully joined group with generation Generation{generationId=147, memberId='consumer-job-executor-2-cc11dc76-067b-4e75-a056-d4d8104bad27', protocol='range'}
+2026-01-17T03:48:54.619+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Successfully joined group with generation Generation{generationId=147, memberId='consumer-job-executor-1-1f887160-3929-46f3-b2ea-6aacdd870525', protocol='range'}
+2026-01-17T03:48:54.724+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Finished assignment for group at generation 147: {consumer-job-executor-1-1f887160-3929-46f3-b2ea-6aacdd870525=Assignment(partitions=[scheduled-jobs-topic-0, scheduled-jobs-topic-1, scheduled-jobs-topic-2]), consumer-job-executor-2-cc11dc76-067b-4e75-a056-d4d8104bad27=Assignment(partitions=[scheduled-updated-jobs-topic-0])}
+2026-01-17T03:48:54.769+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Successfully synced group in generation Generation{generationId=147, memberId='consumer-job-executor-2-cc11dc76-067b-4e75-a056-d4d8104bad27', protocol='range'}
+2026-01-17T03:48:54.769+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Successfully synced group in generation Generation{generationId=147, memberId='consumer-job-executor-1-1f887160-3929-46f3-b2ea-6aacdd870525', protocol='range'}
+2026-01-17T03:48:54.769+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Notifying assignor about the new Assignment(partitions=[scheduled-jobs-topic-0, scheduled-jobs-topic-1, scheduled-jobs-topic-2])
+2026-01-17T03:48:54.769+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Notifying assignor about the new Assignment(partitions=[scheduled-updated-jobs-topic-0])
+2026-01-17T03:48:54.772+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Adding newly assigned partitions: scheduled-updated-jobs-topic-0
+2026-01-17T03:48:54.772+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Adding newly assigned partitions: scheduled-jobs-topic-0, scheduled-jobs-topic-1, scheduled-jobs-topic-2
+2026-01-17T03:48:54.812+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition scheduled-jobs-topic-2 to the committed offset FetchPosition{offset=190, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=2}}
+2026-01-17T03:48:54.812+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition scheduled-updated-jobs-topic-0 to the committed offset FetchPosition{offset=448, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=0}}
+2026-01-17T03:48:54.813+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition scheduled-jobs-topic-1 to the committed offset FetchPosition{offset=154, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=2}}
+2026-01-17T03:48:54.813+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils        : Setting offset for partition scheduled-jobs-topic-0 to the committed offset FetchPosition{offset=196, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[localhost:9092 (id: 1 rack: null)], epoch=2}}
+2026-01-17T03:48:54.815+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-executor: partitions assigned: [scheduled-jobs-topic-0, scheduled-jobs-topic-1, scheduled-jobs-topic-2]
+2026-01-17T03:48:54.815+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-executor: partitions assigned: [scheduled-updated-jobs-topic-0]
+2026-01-17T03:49:00.039+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:49:00.039+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:49:00.040+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : 2026-01-17T03:49 - 2026-01-17T03:50
+2026-01-17T03:49:00.190+05:30 ERROR 54440 --- [job_executor] [job-scheduler-1] i.n.r.d.DnsServerAddressStreamProviders  : Unable to load io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'. Use DEBUG level to see the full stack: java.lang.UnsatisfiedLinkError: failed to load the required native library
+2026-01-17T03:50:00.015+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:50:00.018+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:50:00.018+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : 2026-01-17T03:50 - 2026-01-17T03:51
+2026-01-17T03:51:00.009+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:51:00.012+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:51:00.013+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : 2026-01-17T03:51 - 2026-01-17T03:52
+2026-01-17T03:52:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:52:00.008+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:52:00.008+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : 2026-01-17T03:52 - 2026-01-17T03:53
+2026-01-17T03:53:00.008+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:53:00.011+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:53:00.011+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : 2026-01-17T03:53 - 2026-01-17T03:54
+2026-01-17T03:54:00.008+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:54:00.011+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:54:00.011+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : 2026-01-17T03:54 - 2026-01-17T03:55
+2026-01-17T03:54:00.107+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 52
+2026-01-17T03:54:00.107+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 52
+2026-01-17T03:54:00.114+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] o.a.k.clients.producer.ProducerConfig    : ProducerConfig values: 
+	acks = -1
+	auto.include.jmx.reporter = true
+	batch.size = 16384
+	bootstrap.servers = [localhost:9092]
+	buffer.memory = 33554432
+	client.dns.lookup = use_all_dns_ips
+	client.id = job_executor-producer-1
+	compression.gzip.level = -1
+	compression.lz4.level = 9
+	compression.type = none
+	compression.zstd.level = 3
+	connections.max.idle.ms = 540000
+	delivery.timeout.ms = 120000
+	enable.idempotence = true
+	enable.metrics.push = true
+	interceptor.classes = []
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.max.age.ms = 300000
+	metadata.max.idle.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partitioner.adaptive.partitioning.enable = true
+	partitioner.availability.timeout.ms = 0
+	partitioner.class = null
+	partitioner.ignore.keys = false
+	receive.buffer.bytes = 32768
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 2147483647
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.header.urlencode = false
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	transaction.timeout.ms = 60000
+	transactional.id = null
+	value.serializer = class org.springframework.kafka.support.serializer.JsonSerializer
+
+2026-01-17T03:54:00.115+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] o.a.k.c.t.i.KafkaMetricsCollector        : initializing Kafka metrics collector
+2026-01-17T03:54:00.127+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=job_executor-producer-1] Instantiated an idempotent producer.
+2026-01-17T03:54:00.137+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] o.a.kafka.common.utils.AppInfoParser     : Kafka version: 3.9.1
+2026-01-17T03:54:00.138+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] o.a.kafka.common.utils.AppInfoParser     : Kafka commitId: f745dfdcee2b9851
+2026-01-17T03:54:00.138+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] o.a.kafka.common.utils.AppInfoParser     : Kafka startTimeMs: 1768602240137
+2026-01-17T03:54:00.148+05:30  INFO 54440 --- [job_executor] [kafka-producer-network-thread | job_executor-producer-1] org.apache.kafka.clients.Metadata        : [Producer clientId=job_executor-producer-1] Cluster ID: 3-NS_9qTSXShPmF7mFqOJA
+2026-01-17T03:54:00.154+05:30  INFO 54440 --- [job_executor] [kafka-producer-network-thread | job_executor-producer-1] o.a.k.c.p.internals.TransactionManager   : [Producer clientId=job_executor-producer-1] ProducerId set to 1059 with epoch 0
+2026-01-17T03:54:00.160+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 53
+2026-01-17T03:54:00.160+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 53
+2026-01-17T03:54:00.160+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 54
+2026-01-17T03:54:00.160+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 54
+2026-01-17T03:54:00.161+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 55
+2026-01-17T03:54:00.161+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 55
+2026-01-17T03:54:00.161+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 56
+2026-01-17T03:54:00.161+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 56
+2026-01-17T03:54:00.161+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 57
+2026-01-17T03:54:00.161+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 57
+2026-01-17T03:54:00.208+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 57
+2026-01-17T03:54:00.209+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 57 with runAt 2026-01-17T03:55
+2026-01-17T03:54:00.211+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 53
+2026-01-17T03:54:00.211+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 53 with runAt 2026-01-17T03:55
+2026-01-17T03:54:00.211+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 52
+2026-01-17T03:54:00.211+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 52 with runAt 2026-01-17T03:55
+2026-01-17T03:54:00.211+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 54
+2026-01-17T03:54:00.211+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 54 with runAt 2026-01-17T03:55
+2026-01-17T03:54:00.211+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 55
+2026-01-17T03:54:00.211+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 55 with runAt 2026-01-17T03:55
+2026-01-17T03:54:00.212+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 56
+2026-01-17T03:54:00.212+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 56 with runAt 2026-01-17T03:55
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : execution started for job: 56
+2026-01-17T03:55:00.004+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.j.service.JobSchedulerService        : execution started for job: 57
+2026-01-17T03:55:00.004+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : execution started for job: 54
+2026-01-17T03:55:00.004+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : execution started for job: 52
+2026-01-17T03:55:00.004+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.j.service.JobSchedulerService        : execution started for job: 53
+2026-01-17T03:55:00.004+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : execution started for job: 55
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : ls -u
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.j.service.JobSchedulerService        : python --version
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : python -v
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.j.service.JobSchedulerService        : java --version
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : ls
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : ls -i
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.005+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.j.service.JobSchedulerService        : test_job8
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : test_job4
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.j.service.JobSchedulerService        : test_job5
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : test_job7
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : test_job6
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : 2026-01-17T03:55 - 2026-01-17T03:56
+2026-01-17T03:55:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : test_job7
+2026-01-17T03:55:00.072+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : output: Airtribe
+Books
+Chronos_capstone
+DSA
+ID
+Java
+Screenshots
+ShopmeProject
+Spring
+chronos
+chronos_backend
+interview_ques_auriga.txt
+pre-onboarding_docs
+sts-workspace
+websockets
+
+2026-01-17T03:55:00.072+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : output: 27489366 Airtribe
+31917546 Books
+66924349 Chronos_capstone
+  601415 DSA
+62335369 ID
+ 2541454 Java
+25373136 Screenshots
+ 3177667 ShopmeProject
+  604734 Spring
+65779640 chronos
+66934424 chronos_backend
+52811641 interview_ques_auriga.txt
+58637980 pre-onboarding_docs
+ 3207256 sts-workspace
+65274983 websockets
+
+2026-01-17T03:55:00.073+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:55:00.074+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:55:00.074+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:55:00.074+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:00.074+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:55:00.074+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobProducerService         : producing result update to kafka: 55
+2026-01-17T03:55:00.075+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : output: Airtribe
+Books
+Chronos_capstone
+DSA
+ID
+Java
+Screenshots
+ShopmeProject
+Spring
+chronos
+chronos_backend
+interview_ques_auriga.txt
+pre-onboarding_docs
+sts-workspace
+websockets
+
+2026-01-17T03:55:00.075+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:55:00.075+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:55:00.075+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:00.075+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobProducerService         : producing result update to kafka: 54
+2026-01-17T03:55:00.074+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:00.075+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobProducerService         : producing result update to kafka: 56
+2026-01-17T03:55:00.078+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:00.078+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:00.078+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:00.079+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:00.079+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:00.079+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:00.177+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 52
+2026-01-17T03:55:00.177+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 52
+2026-01-17T03:55:00.178+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 53
+2026-01-17T03:55:00.178+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 53
+2026-01-17T03:55:00.178+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 54
+2026-01-17T03:55:00.178+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 54
+2026-01-17T03:55:00.178+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 55
+2026-01-17T03:55:00.178+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 55
+2026-01-17T03:55:00.178+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 56
+2026-01-17T03:55:00.178+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 56
+2026-01-17T03:55:00.179+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 57
+2026-01-17T03:55:00.179+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 57
+2026-01-17T03:55:00.233+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.job_executor.service.JobService      : output: openjdk 17.0.9 2023-10-17
+OpenJDK Runtime Environment Temurin-17.0.9+9 (build 17.0.9+9)
+OpenJDK 64-Bit Server VM Temurin-17.0.9+9 (build 17.0.9+9, mixed mode)
+
+2026-01-17T03:55:00.234+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:55:00.234+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:55:00.234+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:00.234+05:30  INFO 54440 --- [job_executor] [job-scheduler-6] c.c.j.service.JobProducerService         : producing result update to kafka: 53
+2026-01-17T03:55:00.250+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 55
+2026-01-17T03:55:00.251+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T03:56
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 53
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 53 with runAt 2026-01-17T03:55
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.j.service.JobSchedulerService        : execution started for job: 53
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.j.service.JobSchedulerService        : java --version
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 52
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.j.service.JobSchedulerService        : test_job5
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 52 with runAt 2026-01-17T03:55
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 54
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : execution started for job: 52
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 54 with runAt 2026-01-17T03:55
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : execution started for job: 54
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : python -v
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : ls
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.253+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : test_job6
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 55
+2026-01-17T03:55:00.253+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 55 with runAt 2026-01-17T03:55
+2026-01-17T03:55:00.252+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.253+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : test_job4
+2026-01-17T03:55:00.253+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.j.service.JobSchedulerService        : execution started for job: 55
+2026-01-17T03:55:00.253+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.j.service.JobSchedulerService        : ls -i
+2026-01-17T03:55:00.253+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.253+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.j.service.JobSchedulerService        : test_job7
+2026-01-17T03:55:00.260+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:00.260+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:00.260+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:00.262+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.job_executor.service.JobService      : output: 27489366 Airtribe
+31917546 Books
+66924349 Chronos_capstone
+  601415 DSA
+62335369 ID
+ 2541454 Java
+25373136 Screenshots
+ 3177667 ShopmeProject
+  604734 Spring
+65779640 chronos
+66934424 chronos_backend
+52811641 interview_ques_auriga.txt
+58637980 pre-onboarding_docs
+ 3207256 sts-workspace
+65274983 websockets
+
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-9] c.c.j.service.JobProducerService         : producing result update to kafka: 55
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : output: Airtribe
+Books
+Chronos_capstone
+DSA
+ID
+Java
+Screenshots
+ShopmeProject
+Spring
+chronos
+chronos_backend
+interview_ques_auriga.txt
+pre-onboarding_docs
+sts-workspace
+websockets
+
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:00.263+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobProducerService         : producing result update to kafka: 54
+2026-01-17T03:55:00.274+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 57
+2026-01-17T03:55:00.274+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 57 with runAt 2026-01-17T03:55
+2026-01-17T03:55:00.274+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 56
+2026-01-17T03:55:00.274+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : execution started for job: 57
+2026-01-17T03:55:00.274+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 56 with runAt 2026-01-17T03:55
+2026-01-17T03:55:00.274+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : python --version
+2026-01-17T03:55:00.274+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.275+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : test_job8
+2026-01-17T03:55:00.275+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : execution started for job: 56
+2026-01-17T03:55:00.275+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : ls -u
+2026-01-17T03:55:00.275+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:55:00.275+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : test_job7
+2026-01-17T03:55:00.281+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:00.281+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:00.281+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:00.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : output: Airtribe
+Books
+Chronos_capstone
+DSA
+ID
+Java
+Screenshots
+ShopmeProject
+Spring
+chronos
+chronos_backend
+interview_ques_auriga.txt
+pre-onboarding_docs
+sts-workspace
+websockets
+
+2026-01-17T03:55:00.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:55:00.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:55:00.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:00.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobProducerService         : producing result update to kafka: 56
+2026-01-17T03:55:00.328+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.job_executor.service.JobService      : output: openjdk 17.0.9 2023-10-17
+OpenJDK Runtime Environment Temurin-17.0.9+9 (build 17.0.9+9)
+OpenJDK 64-Bit Server VM Temurin-17.0.9+9 (build 17.0.9+9, mixed mode)
+
+2026-01-17T03:55:00.329+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:55:00.329+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:55:00.329+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:00.329+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.j.service.JobProducerService         : producing result update to kafka: 53
+2026-01-17T03:55:00.364+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 56
+2026-01-17T03:55:00.365+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T04:00
+2026-01-17T03:55:00.374+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 54
+2026-01-17T03:55:00.375+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T03:56
+2026-01-17T03:55:00.407+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 53
+2026-01-17T03:55:00.408+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T04:00
+2026-01-17T03:55:00.442+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 55
+2026-01-17T03:55:00.443+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T03:56
+2026-01-17T03:55:00.451+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 54
+2026-01-17T03:55:00.452+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T03:56
+2026-01-17T03:55:00.467+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 56
+2026-01-17T03:55:00.468+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T04:00
+2026-01-17T03:55:00.474+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 53
+2026-01-17T03:55:00.475+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T04:00
+2026-01-17T03:55:02.099+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:02.099+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:02.100+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:02.100+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:02.100+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:02.100+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:02.278+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:02.278+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:02.278+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:02.296+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:02.296+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:02.296+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:06.123+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:06.123+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:06.124+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:06.124+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:06.124+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:06.124+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:06.126+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:06.126+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:06.126+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobProducerService         : producing result update to kafka: 52
+2026-01-17T03:55:06.126+05:30  INFO 54440 --- [job_executor] [job-scheduler-1] c.c.j.service.JobProducerService         : producing result update to kafka: 57
+2026-01-17T03:55:06.132+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 52
+2026-01-17T03:55:06.134+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T04:00
+2026-01-17T03:55:06.150+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 57
+2026-01-17T03:55:06.151+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T04:00
+2026-01-17T03:55:06.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:06.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:06.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:06.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:06.286+05:30  INFO 54440 --- [job_executor] [job-scheduler-7] c.c.j.service.JobProducerService         : producing result update to kafka: 52
+2026-01-17T03:55:06.290+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 52
+2026-01-17T03:55:06.290+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T04:00
+2026-01-17T03:55:06.306+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : output: 
+2026-01-17T03:55:06.306+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : error: bash: python: command not found
+
+2026-01-17T03:55:06.306+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : exitCode: 127
+2026-01-17T03:55:06.306+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:55:06.306+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobProducerService         : producing result update to kafka: 57
+2026-01-17T03:55:06.325+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 57
+2026-01-17T03:55:06.325+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T04:00
+2026-01-17T03:56:00.009+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:56:00.020+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:56:00.020+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : 2026-01-17T03:56 - 2026-01-17T03:57
+2026-01-17T03:56:00.074+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 55
+2026-01-17T03:56:00.074+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 55
+2026-01-17T03:56:00.075+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.job_executor.service.JobService      : producer side: 54
+2026-01-17T03:56:00.075+05:30  INFO 54440 --- [job_executor] [job-scheduler-2] c.c.j.service.JobProducerService         : producing jobs to kafka: 54
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 55
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 55 with runAt 2026-01-17T03:56
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : execution started for job: 55
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : ls -i
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 54
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : test_job7
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 54 with runAt 2026-01-17T03:56
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : execution started for job: 54
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : ls
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:56:00.085+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : test_job6
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : output: 27489366 Airtribe
+31917546 Books
+66924349 Chronos_capstone
+  601415 DSA
+62335369 ID
+ 2541454 Java
+25373136 Screenshots
+ 3177667 ShopmeProject
+  604734 Spring
+65779640 chronos
+66934424 chronos_backend
+52811641 interview_ques_auriga.txt
+58637980 pre-onboarding_docs
+ 3207256 sts-workspace
+65274983 websockets
+
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : output: Airtribe
+Books
+Chronos_capstone
+DSA
+ID
+Java
+Screenshots
+ShopmeProject
+Spring
+chronos
+chronos_backend
+interview_ques_auriga.txt
+pre-onboarding_docs
+sts-workspace
+websockets
+
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-5] c.c.j.service.JobProducerService         : producing result update to kafka: 54
+2026-01-17T03:56:00.095+05:30  INFO 54440 --- [job_executor] [job-scheduler-4] c.c.j.service.JobProducerService         : producing result update to kafka: 55
+2026-01-17T03:56:00.106+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 55
+2026-01-17T03:56:00.106+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T03:57
+2026-01-17T03:56:00.119+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 54
+2026-01-17T03:56:00.120+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T03:57
+2026-01-17T03:57:00.006+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.job_executor.service.JobService      : producing jobs for next 1 min
+2026-01-17T03:57:00.009+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.job_executor.service.JobService      : fetching jobs for next 1 min
+2026-01-17T03:57:00.009+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.job_executor.service.JobService      : 2026-01-17T03:57 - 2026-01-17T03:58
+2026-01-17T03:57:00.062+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.job_executor.service.JobService      : producer side: 55
+2026-01-17T03:57:00.062+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.j.service.JobProducerService         : producing jobs to kafka: 55
+2026-01-17T03:57:00.063+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.job_executor.service.JobService      : producer side: 54
+2026-01-17T03:57:00.063+05:30  INFO 54440 --- [job_executor] [job-scheduler-10] c.c.j.service.JobProducerService         : producing jobs to kafka: 54
+2026-01-17T03:57:00.077+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 55
+2026-01-17T03:57:00.077+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 55 with runAt 2026-01-17T03:57
+2026-01-17T03:57:00.077+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : execution started for job: 55
+2026-01-17T03:57:00.077+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : ls -i
+2026-01-17T03:57:00.077+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:57:00.077+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : test_job7
+2026-01-17T03:57:00.089+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : output: 27489366 Airtribe
+31917546 Books
+66924349 Chronos_capstone
+  601415 DSA
+62335369 ID
+ 2541454 Java
+25373136 Screenshots
+ 3177667 ShopmeProject
+  604734 Spring
+65779640 chronos
+66934424 chronos_backend
+52811641 interview_ques_auriga.txt
+58637980 pre-onboarding_docs
+ 3207256 sts-workspace
+65274983 websockets
+
+2026-01-17T03:57:00.089+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:57:00.089+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:57:00.089+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:57:00.089+05:30  INFO 54440 --- [job_executor] [job-scheduler-3] c.c.j.service.JobProducerService         : producing result update to kafka: 55
+2026-01-17T03:57:00.092+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobConsumerService         : consumer side: 54
+2026-01-17T03:57:00.092+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.c.j.service.JobSchedulerService        : Scheduled job 54 with runAt 2026-01-17T03:57
+2026-01-17T03:57:00.092+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : execution started for job: 54
+2026-01-17T03:57:00.092+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : ls
+2026-01-17T03:57:00.092+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : /Users/dishanchutani/Documents
+2026-01-17T03:57:00.092+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : test_job6
+2026-01-17T03:57:00.092+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 55
+2026-01-17T03:57:00.092+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T03:58
+2026-01-17T03:57:00.097+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : output: Airtribe
+Books
+Chronos_capstone
+DSA
+ID
+Java
+Screenshots
+ShopmeProject
+Spring
+chronos
+chronos_backend
+interview_ques_auriga.txt
+pre-onboarding_docs
+sts-workspace
+websockets
+
+2026-01-17T03:57:00.097+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : error: 
+2026-01-17T03:57:00.097+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.job_executor.service.JobService      : exitCode: 0
+2026-01-17T03:57:00.097+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobSchedulerService        : updating job details now
+2026-01-17T03:57:00.097+05:30  INFO 54440 --- [job_executor] [job-scheduler-8] c.c.j.service.JobProducerService         : producing result update to kafka: 54
+2026-01-17T03:57:00.108+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.j.service.JobConsumerService         : consuming job for update: 54
+2026-01-17T03:57:00.108+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] c.c.job_executor.service.JobService      : nextRunningTime: 2026-01-17T03:58
+2026-01-17T03:57:26.497+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Revoke previously assigned partitions scheduled-jobs-topic-0, scheduled-jobs-topic-1, scheduled-jobs-topic-2
+2026-01-17T03:57:26.497+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] k.c.c.i.ConsumerRebalanceListenerInvoker : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Revoke previously assigned partitions scheduled-updated-jobs-topic-0
+2026-01-17T03:57:26.500+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-executor: partitions revoked: [scheduled-updated-jobs-topic-0]
+2026-01-17T03:57:26.500+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-executor: partitions revoked: [scheduled-jobs-topic-0, scheduled-jobs-topic-1, scheduled-jobs-topic-2]
+2026-01-17T03:57:26.500+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Member consumer-job-executor-2-cc11dc76-067b-4e75-a056-d4d8104bad27 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-17T03:57:26.500+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Member consumer-job-executor-1-1f887160-3929-46f3-b2ea-6aacdd870525 sending LeaveGroup request to coordinator localhost:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-17T03:57:26.501+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-17T03:57:26.501+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Request joining group due to: consumer pro-actively leaving the group
+2026-01-17T03:57:26.501+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Unsubscribed all topics or patterns and assigned partitions
+2026-01-17T03:57:26.501+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-17T03:57:26.501+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Request joining group due to: consumer pro-actively leaving the group
+2026-01-17T03:57:26.501+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.i.ClassicKafkaConsumer         : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Unsubscribed all topics or patterns and assigned partitions
+2026-01-17T03:57:26.506+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-17T03:57:26.506+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-17T03:57:26.506+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-1, groupId=job-executor] Request joining group due to: consumer pro-actively leaving the group
+2026-01-17T03:57:26.506+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.k.c.c.internals.ConsumerCoordinator  : [Consumer clientId=consumer-job-executor-2, groupId=job-executor] Request joining group due to: consumer pro-actively leaving the group
+2026-01-17T03:57:26.940+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-01-17T03:57:26.940+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-01-17T03:57:26.940+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-17T03:57:26.940+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-17T03:57:26.940+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-01-17T03:57:26.940+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-01-17T03:57:26.940+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-01-17T03:57:26.940+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-01-17T03:57:26.946+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-job-executor-1 unregistered
+2026-01-17T03:57:26.946+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.a.kafka.common.utils.AppInfoParser     : App info kafka.consumer for consumer-job-executor-2 unregistered
+2026-01-17T03:57:26.946+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-executor: Consumer stopped
+2026-01-17T03:57:26.946+05:30  INFO 54440 --- [job_executor] [org.springframework.kafka.KafkaListenerEndpointContainer#1-0-C-1] o.s.k.l.KafkaMessageListenerContainer    : job-executor: Consumer stopped
+2026-01-17T03:57:26.948+05:30  INFO 54440 --- [job_executor] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-17T03:57:26.961+05:30  INFO 54440 --- [job_executor] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-01-17T03:57:29.033+05:30  INFO 54440 --- [job_executor] [SpringApplicationShutdownHook] o.a.k.clients.producer.KafkaProducer     : [Producer clientId=job_executor-producer-1] Closing the Kafka producer with timeoutMillis = 30000 ms.
+2026-01-17T03:57:29.038+05:30  INFO 54440 --- [job_executor] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics scheduler closed
+2026-01-17T03:57:29.039+05:30  INFO 54440 --- [job_executor] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-17T03:57:29.039+05:30  INFO 54440 --- [job_executor] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-01-17T03:57:29.039+05:30  INFO 54440 --- [job_executor] [SpringApplicationShutdownHook] o.apache.kafka.common.metrics.Metrics    : Metrics reporters closed
+2026-01-17T03:57:29.040+05:30  INFO 54440 --- [job_executor] [SpringApplicationShutdownHook] o.a.kafka.common.utils.AppInfoParser     : App info kafka.producer for job_executor-producer-1 unregistered
