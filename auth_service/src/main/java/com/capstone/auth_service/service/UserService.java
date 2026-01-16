@@ -4,7 +4,7 @@ import com.capstone.auth_service.dto.UserDto;
 import com.capstone.auth_service.entity.User;
 import com.capstone.auth_service.entity.VerificationToken;
 import com.capstone.auth_service.enums.ROLE;
-import com.capstone.auth_service.exceptions.UserNotFoundException;
+import com.capstone.auth_service.exception.UserNotFoundException;
 import com.capstone.auth_service.repository.UserRepository;
 import com.capstone.auth_service.repository.VerificationTokenRepository;
 import com.capstone.auth_service.util.TokenUtil;

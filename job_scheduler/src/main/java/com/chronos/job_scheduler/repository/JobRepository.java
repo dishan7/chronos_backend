@@ -15,7 +15,7 @@ public interface JobRepository extends JpaRepository<Job, Long> {
     @Query("""
             SELECT j FROM Job j
             WHERE j.runAt BETWEEN :start AND :end
-            AND j.status = 0
+            AND j.status = com.chronos.job_scheduler.enums.JOB_STATUS.SCHEDULED
             """)
     public List<Job> fetchJobsInTimeFrame(@Param("start") LocalDateTime start,
                                            @Param("end") LocalDateTime end);

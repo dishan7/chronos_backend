@@ -5,6 +5,7 @@ import com.chronos.job_scheduler.dto.JobDto;
 import com.chronos.job_scheduler.entity.Job;
 import com.chronos.job_scheduler.service.JobService;
 import com.chronos.job_scheduler.service.SecurityService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
@@ -48,7 +49,7 @@ public class JobController {
 
     @PostMapping("/executeNow")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<String> executeNow(@RequestBody JobDto jobDto) throws Exception {
+    public ResponseEntity<String> executeNow(@RequestBody @Valid JobDto jobDto) throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         _jobService.executeNow(jobDto, username);
@@ -57,7 +58,7 @@ public class JobController {
 
     @PostMapping("/createJob")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<String> createJob(@RequestBody JobDto jobDto) throws Exception {
+    public ResponseEntity<String> createJob(@RequestBody @Valid JobDto jobDto) throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
         _jobService.createJob(jobDto, username);

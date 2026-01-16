@@ -3,7 +3,9 @@ package com.capstone.auth_service.controller;
 import com.capstone.auth_service.dto.UserDto;
 import com.capstone.auth_service.entity.User;
 import com.capstone.auth_service.service.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -19,7 +21,7 @@ public class UserController {
     private UserService _userService;
 
     @PostMapping("/registerUser")
-    public ResponseEntity<String> registerUser(@RequestBody UserDto userDto){
+    public ResponseEntity<String> registerUser(@RequestBody @Valid UserDto userDto){
         User registeredUser = _userService.registerUser(userDto);
         String verificationTokenString = UUID.randomUUID().toString();
         _userService.saveVerificationToken(registeredUser, verificationTokenString);
