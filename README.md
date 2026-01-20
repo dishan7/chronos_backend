@@ -84,7 +84,41 @@ SCHEDULED → RUNNING → SUCCESS
 ↘
 FAILED (after 3 retries)
 
+---
 
+## Containerization
+
+The entire system is containerized using **Docker** and orchestrated using **Docker Compose**.
+
+### Containers Overview
+
+| Service          | Description                          | Dependency              |
+|------------------|--------------------------------------|-------------------------|
+| auth_service     | Authentication & Authorization       | PostgreSQL (UserDB)     |
+| job_scheduler    | Job scheduling & state management    | PostgreSQL (JobsDB), Kafka |
+| job_executor     | Job execution & retries              | Kafka                   |
+| kafka            | Message broker                       | Zookeeper               |
+| zookeeper        | Kafka coordination                   | —                       |
+| postgres-user    | User database                        | —                       |
+| postgres-jobs    | Jobs database                        | —                       |
+
+---
+
+## Running the Application (Docker)
+
+### Prerequisites
+- Docker
+- Docker Compose
+
+### Start the System
+
+```bash
+docker compose up --build
+```
+This will start:
+All three microservices
+Kafka and Zookeeper
+Separate PostgreSQL instances for users and jobs
 ---
 
 ## Fault Tolerance & Reliability
