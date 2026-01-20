@@ -1,4 +1,4 @@
-## Job Scheduling & Execution System
+## CHRONOS
 
 ## Overview
 
