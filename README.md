@@ -113,3 +113,8 @@ FAILED (after 3 retries)
    kafka.topic.jobs=scheduled-jobs-topic
    kafka.topic.updatedJobs=scheduled-updated-jobs-topic
 4. Run the Spring Boot services.
+
+## Author
+
+**Dishan Chutani**
+
