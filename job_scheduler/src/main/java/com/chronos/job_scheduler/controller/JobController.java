@@ -49,20 +49,20 @@ public class JobController {
 
     @PostMapping("/executeNow")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<String> executeNow(@RequestBody @Valid JobDto jobDto) throws Exception {
+    public ResponseEntity<Job> executeNow(@RequestBody @Valid JobDto jobDto) throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
-        _jobService.executeNow(jobDto, username);
-        return ResponseEntity.status(200).body("Job executed!");
+        Job createdJob = _jobService.executeNow(jobDto, username);
+        return ResponseEntity.status(200).body(createdJob);
     }
 
     @PostMapping("/createJob")
     @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<String> createJob(@RequestBody @Valid JobDto jobDto) throws Exception {
+    public ResponseEntity<Job> createJob(@RequestBody @Valid JobDto jobDto) throws Exception {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String username = authentication.getName();
-        _jobService.createJob(jobDto, username);
-        return ResponseEntity.status(200).body("Job created successfully");
+        Job createdJob = _jobService.createJob(jobDto, username);
+        return ResponseEntity.status(200).body(createdJob);
     }
 
     @PutMapping("/changeJobStatus")

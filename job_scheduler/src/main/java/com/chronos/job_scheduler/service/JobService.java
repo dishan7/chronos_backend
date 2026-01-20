@@ -46,7 +46,7 @@ public class JobService {
         return CronExpression.isValidExpression(cron);
     }
 
-    public void executeNow(JobDto jobDto, String username) throws Exception {
+    public Job executeNow(JobDto jobDto, String username) throws Exception {
         Job job = new Job();
         job.setCommand(jobDto.getCommand());
         job.setCreatedByUsername(username);
@@ -70,9 +70,10 @@ public class JobService {
                 .retrieve()
                 .bodyToMono(Void.class)
                 .block();
+        return _jobRepository.findById(savedJob.getId()).orElse(null);
     }
 
-    public void createJob(JobDto jobDto, String username) throws Exception {
+    public Job createJob(JobDto jobDto, String username) throws Exception {
         Job job = new Job();
         if(jobDto.getCron_expression() != null && !validateCron(jobDto.getCron_expression())){
             throw new Exception("Invalid Cron Expression");
@@ -88,7 +89,7 @@ public class JobService {
         job.setPath(jobDto.getPath());
         job.setCreatedByUsername(username);
 
-        _jobRepository.save(job);
+        return _jobRepository.save(job);
     }
 
     public void changeJobStatus(Long jobId, String jobStatus){

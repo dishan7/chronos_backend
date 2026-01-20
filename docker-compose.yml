@@ -1,0 +1,95 @@
+services:
+
+  # ---------- AUTH SERVICE ----------
+  postgres:
+    image: postgres:16
+    container_name: auth_postgres
+    environment:
+      POSTGRES_DB: UserDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: Asia/Kolkata
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "5432:5432"
+
+  auth_service:
+    build: ./auth_service
+    container_name: authservice
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      TZ: Asia/Kolkata
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - postgres
+
+  # ---------- JOB SCHEDULER ----------
+  jobs_postgres:
+    image: postgres:16
+    container_name: jobs_postgres
+    environment:
+      POSTGRES_DB: JobsDB
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      TZ: Asia/Kolkata
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "5433:5432"
+
+  job_scheduler:
+    build: ./job_scheduler
+    container_name: jobscheduler
+    ports:
+      - "8081:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      TZ: Asia/Kolkata
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - jobs_postgres
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.6.0
+    container_name: zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+      TZ: Asia/Kolkata
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.0
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: INTERNAL://kafka:9092
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      TZ: Asia/Kolkata
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+
+  job_executor:
+    build: ./job_executor
+    container_name: jobexecutor
+    ports:
+      - "8082:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: docker
+      TZ: Asia/Kolkata
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+    depends_on:
+      - kafka

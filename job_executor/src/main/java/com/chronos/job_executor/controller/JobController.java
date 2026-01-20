@@ -19,9 +19,6 @@ import reactor.core.publisher.Mono;
 public class JobController {
 
     @Autowired
-    private RestTemplate _restTemplate;
-
-    @Autowired
     private JobService _jobService;
 
     @Autowired

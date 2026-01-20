@@ -20,12 +20,15 @@ public class UserController {
     @Autowired
     private UserService _userService;
 
+    @Value("${app.auth.base-url}")
+    private String baseUrl;
+
     @PostMapping("/registerUser")
     public ResponseEntity<String> registerUser(@RequestBody @Valid UserDto userDto){
         User registeredUser = _userService.registerUser(userDto);
         String verificationTokenString = UUID.randomUUID().toString();
         _userService.saveVerificationToken(registeredUser, verificationTokenString);
-        String verificationTokenUrl = "http://localhost:8080/verifyRegisteredUser?verificationToken=" + verificationTokenString;
+        String verificationTokenUrl = baseUrl + "/verifyRegisteredUser?verificationToken=" + verificationTokenString;
         System.out.println(verificationTokenUrl);
         return ResponseEntity.status(200).body("verify using the link sent");
     }
